@@ -1,24 +1,12 @@
 extends Node
 
 
-const SAVES_INDEX = "user://saves.save"
-
 var player_data = load("res://data/current_player_data.tres")
 
 var is_player : bool = false
 var current_save_folder : String
 
 var rng = RandomNumberGenerator.new()
-
-
-func get_saves_index() -> Array:
-	var index_array = []
-	var index = File.new()
-	if (index.open(SAVES_INDEX, File.READ) == OK):
-		while index.get_position() < index.get_len():
-			var save = parse_json(index.get_line())
-			index_array.append(save)
-	return index_array
 
 
 func save():

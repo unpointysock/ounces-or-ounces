@@ -20,8 +20,7 @@ func _ready():
 	state = states.START_MENU
 	SaveLoad.is_player = false
 	$UI.connect("new_player_named", self, "create_new_player")
-	
-	
+	print_debug(current_player_data.get_data_as_dict())	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
